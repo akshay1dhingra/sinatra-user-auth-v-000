@@ -36,8 +36,9 @@ class ApplicationController < Sinatra::Base
       redirect 'sessions/login'
     else
       session[:id] = @user.id
+      redirect '/users/home'
     end
-    redirect '/users/home'
+    
   end
 
   get '/sessions/logout' do
